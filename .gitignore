@@ -1,0 +1,48 @@
+# Visual Studio files
+.vs/
+*.vcxproj.user
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build results
+[Bb]uild/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+
+# Intermediate files
+*.obj
+*.idb
+*.pdb
+*.ipch
+*.pch
+*.log
+*.tlog
+*.vspscc
+*.dbmdl
+*.opendb
+
+# Cache
+*.cache
+*.ilk
+*.ncb
+*.aps
+*.tmp
+
+# Others
+*.exe
+*.dll
+*.lib
+*.sbr
+*.o
+*.out
+
+# Ignore LFS-sized artifacts accidentally created
+*.iso
+*.bin
+*.dat
