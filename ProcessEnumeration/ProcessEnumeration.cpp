@@ -6,6 +6,8 @@
 #include <iostream>
 #include <format>
 
+#include "logManagement.h"
+
 
 #pragma comment(lib, "ws2_32.lib")
 #pragma comment(lib, "wbemuuid.lib")
@@ -77,6 +79,8 @@ private:
 
 VOID EnumProcesses_low_privs()
 {
+	string Msg = {};
+
 	DWORD proc_ids[1024];
 	DWORD ret_bytes;
 
@@ -106,8 +110,11 @@ VOID EnumProcesses_low_privs()
 			{
 				printf("Error from QueryFullProcessImageNameW");
 			}
-			else {
-				wprintf(L"%ls\n", lpExeName);
+			else 
+			{
+				
+				Msg = format("%s", lpExeName); // error, Msg = string and lpExeName = wchar_t
+				WriteLog(Msg);
 			}
 		}
 	}
@@ -215,8 +222,8 @@ VOID EnumProcesses_ToolHelpSnapShot32()
 int main()
 {
     std::cout << "Hello World!\n";
-	//EnumProcesses_low_privs();
+	EnumProcesses_low_privs();
 	//EnumProcesses_debug_privs();
-	EnumProcesses_ToolHelpSnapShot32();
+	//EnumProcesses_ToolHelpSnapShot32();
 }
 
